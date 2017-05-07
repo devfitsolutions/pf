@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Pessoas</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+			<p:commandButton value="Inserir" action="#{pessoaCtrl.actionInserir}" />
+
+			<p:dataTable value="#{pessoaCtrl.listagem}" var="p">
+				<f:facet name="header">
+					<h:outputLabel value="Lista de Pessoas" />
+				</f:facet>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Código" />
+					</f:facet>
+					<h:outputLabel value="#{p.id}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nome" />
+					</f:facet>
+					<h:outputLabel value="#{p.nome}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="CPF" />
+					</f:facet>
+					<h:outputLabel value="#{p.cpf}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="RG" />
+					</f:facet>
+					<h:outputLabel value="#{p.rg}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Dt Nascimento" />
+					</f:facet>
+					<h:outputLabel value="#{p.dataNasc}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Rua" />
+					</f:facet>
+					<h:outputLabel value="#{p.rua}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Bairro" />
+					</f:facet>
+					<h:outputLabel value="#{p.bairro}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Cidade" />
+					</f:facet>
+					<h:outputLabel value="#{p.cidade}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="UF" />
+					</f:facet>
+					<h:outputLabel value="#{p.uf}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="CEP" />
+					</f:facet>
+					<h:outputLabel value="#{p.cep}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="E-mail" />
+					</f:facet>
+					<h:outputLabel value="#{p.email}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Tipo" />
+					</f:facet>
+					<h:outputLabel value="#{p.tipo}" />
+				</p:column>
+
+				<p:column>
+					<h:commandLink value="Alterar"
+						action="#{pessoaCtrl.actionAlterar(p)}" />
+					&nbsp;&nbsp;
+					<h:commandLink value="Excluir"
+						action="#{pessoaCtrl.actionExcluir(p)}" />
+				</p:column>
+			</p:dataTable>
+			<p:commandButton value="Inicio" action="publico/index.xhtml"></p:commandButton>
+		</div>
+	</h:form>
+</h:body>
+
+</html>
