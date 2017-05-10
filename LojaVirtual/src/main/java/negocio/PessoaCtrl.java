@@ -69,7 +69,6 @@ public class PessoaCtrl implements Serializable {
 			if (pessoa.getId() == 0) {
 
 				pessoa.setUf(estado.getSigla());
-				;
 
 				System.out.println("Pessoa UF: " + pessoa.getUf());
 				System.out.println("Pessoa Cidade: " + pessoa.getCidade());
@@ -99,7 +98,7 @@ public class PessoaCtrl implements Serializable {
 
 			cidades = new ArrayList<>();
 
-			return "user/form_pessoa";
+			return "form_pessoa";
 		} catch (RuntimeException erro) {
 			System.out.println("Erro ao tentar carregar Estados ao abrir o formulário de pessoa.");
 			erro.printStackTrace();
