@@ -28,6 +28,9 @@ public class PessoaCtrl implements Serializable {
 	private List<Cidade> cidades;
 
 	public Pessoa getPessoa() {
+		if (pessoa == null) {
+			pessoa = new Pessoa();
+		}
 		return pessoa;
 	}
 
@@ -91,7 +94,6 @@ public class PessoaCtrl implements Serializable {
 	public String actionInserir() {
 
 		try {
-			pessoa = new Pessoa();
 
 			EstadoDAO estadodao = new EstadoDAO();
 			estados = estadodao.listagem();

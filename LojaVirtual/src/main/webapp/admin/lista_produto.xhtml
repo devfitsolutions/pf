@@ -13,7 +13,7 @@
 <h:body>
 	<h:form>
 		<div align="center">
-			<p:commandButton value="Inserir" action="#{produtoCtrl.actionInserir}"/>
+			<p:commandButton value="Novo" action="#{produtoCtrl.actionInserir}"/>
 			
 			<p:dataTable value="#{produtoCtrl.listagem}" var="p">
 				<f:facet name="header"><h:outputLabel value="Lista de Produtos"/></f:facet>
@@ -36,7 +36,7 @@
 					</h:commandLink>
 				</p:column>
 			</p:dataTable>
-			<p:commandButton value="Inicio" action="publico/index.xhtml"></p:commandButton>
+			<h:outputLink value="principal.xhtml">Voltar</h:outputLink>
 		</div>
 	</h:form>
 </h:body>
