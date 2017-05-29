@@ -98,7 +98,7 @@ public class PessoaCtrl implements Serializable {
 			EstadoDAO estadodao = new EstadoDAO();
 			estados = estadodao.listagem();
 
-			cidades = new ArrayList<>();
+			cidades = new ArrayList<Cidade>();
 
 			return "form_pessoa";
 		} catch (RuntimeException erro) {
@@ -139,7 +139,7 @@ public class PessoaCtrl implements Serializable {
 				CidadeDAO cidadedao = new CidadeDAO();
 				cidades = cidadedao.buscaPorEstado(estado.getId());
 			} else {
-				cidades = new ArrayList<>();
+				cidades = new ArrayList<Cidade>();
 			}
 		} catch (RuntimeException erro) {
 			System.out.println("Combo Cidade não pode ser carregada.");
